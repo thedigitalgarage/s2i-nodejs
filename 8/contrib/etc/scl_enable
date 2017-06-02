@@ -1,6 +1,5 @@
 # This will make scl collection binaries work out of box.
 unset BASH_ENV PROMPT_COMMAND ENV
-source scl_source enable nodejs010
 
 #Set the debug port to 5858 by default.
 if [ -z "$DEBUG_PORT" ]; then
