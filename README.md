@@ -19,7 +19,7 @@ Node.JS versions currently provided are:
 * nodejs-5.12.0
 * nodejs-6.10.3 lts
 * nodejs-7.10.0
-* nodejs-8.0.0 current
+* nodejs-8.0.0 current, latest
 
 Installation
 ---------------
