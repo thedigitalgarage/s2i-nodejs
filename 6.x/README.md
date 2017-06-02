@@ -1,28 +1,21 @@
-NodeJS Docker image
+Digital Garage NodeJS Docker image
 ===================
 
 This repository contains the source for building various versions of
 the Node.JS application as a reproducible Docker image using
 [source-to-image](https://github.com/openshift/source-to-image).
-Users can choose between RHEL and CentOS based builder images.
 The resulting image can be run using [Docker](http://docker.io).
 
 
 Usage
 ---------------------
-To build a simple [nodejs-sample-app](https://github.com/openshift/sti-nodejs/tree/master/0.10/test/test-app) application
+To build a simple [nodejs-sample-app](https://github.com/thedigitalgarage/s2i-nodejs/tree/master/0.10/test/test-app) application
 using standalone [STI](https://github.com/openshift/source-to-image) and then run the
 resulting image with [Docker](http://docker.io) execute:
 
-*  **For RHEL based image**
-    ```
-    $ s2i build https://github.com/openshift/sti-nodejs.git --context-dir=0.10/test/test-app/ openshift/nodejs-010-rhel7 nodejs-sample-app
-    $ docker run -p 8080:8080 nodejs-sample-app
-    ```
-
 *  **For CentOS based image**
     ```
-    $ s2i build https://github.com/openshift/sti-nodejs.git --context-dir=0.10/test/test-app/ openshift/nodejs-010-centos7 nodejs-sample-app
+    $ s2i build https://github.com/thedigitalgarage/s2i-nodejs.git --context-dir=0.10/test/test-app/ openshift/s2i-nodejs:0.10 nodejs-sample-app
     $ docker run -p 8080:8080 nodejs-sample-app
     ```
 
@@ -39,11 +32,6 @@ Repository organization
     * **Dockerfile**
 
         CentOS based Dockerfile.
-
-    * **Dockerfile.rhel7**
-
-        RHEL based Dockerfile. In order to perform build or test actions on this
-        Dockerfile you need to run the action on a properly subscribed RHEL machine.
 
     * **`s2i/bin/`**
 
@@ -134,7 +122,7 @@ After you [Docker exec](http://docker.io) into the running container, your curre
 
 ### Using OpenShift's rsync
 
-If you have deployed the container to OpenShift, you can use [oc rsync](https://docs.openshift.org/latest/dev_guide/copy_files_to_container.html) to copy local files to a remote container running in an OpenShift pod.
+If you have deployed the container to Digital Garage, you can use [oc rsync](http://docs.thedigitalgarage.io/dev_guide/copy_files_to_container.html) to copy local files to a remote container running in a Digital Garage pod.
 
 #### Warning:
 
